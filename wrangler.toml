@@ -1,0 +1,9 @@
+name = "dj"
+
+account_id = "75b2c295f981f1e8303de283b45d2557"
+workers_dev = true
+compatibility_date = "2025-08-09"
+
+[assets]
+directory = "./"
+

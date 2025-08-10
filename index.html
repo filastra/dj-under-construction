@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Under Construction — DJing Service</title>
 <style>
-::root{
+:root{
   --bg:#0b0f1a;
   --panel:#0f1724;
   --accent:#ff3ca6;
@@ -13,11 +13,10 @@
   --muted:#9aa7bd;
 }
 *{box-sizing:border-box}
-html,body{height:100%;overflow-x:hidden} /* Prevent iPhone sideways scroll */
+html,body{height:100%}
 body{
   margin:0;
   font-family:Inter, "Helvetica Neue", Arial, sans-serif;
-  -webkit-text-size-adjust:100%; /* Prevent font zooming on iOS */
   background:
     radial-gradient( circle at 10% 10%, rgba(0,224,255,0.06), transparent 8%),
     radial-gradient( circle at 90% 80%, rgba(255,60,166,0.04), transparent 10%),
@@ -55,7 +54,6 @@ body{
   display:flex;align-items:center;justify-content:center;
   transform-origin:50% 50%;
   animation:spin 8s linear infinite;
-  will-change: transform; transform: translateZ(0);
 }
 .logo:after{
   content:'';width:46px;height:46px;border-radius:50%;background:linear-gradient(180deg,rgba(0,0,0,0.15), rgba(255,255,255,0.02));
@@ -87,7 +85,6 @@ body{
   animation:vu 1s linear infinite;
   transform-origin:bottom;
   box-shadow:0 4px 12px rgba(0,0,0,0.6), 0 0 12px rgba(0,224,255,0.06);
-  will-change: transform; transform: translateZ(0);
 }
 .bar:nth-child(1){animation-duration:0.85s; animation-delay:0s}
 .bar:nth-child(2){animation-duration:0.6s; animation-delay:0.1s}
@@ -132,7 +129,6 @@ body{
   box-shadow:0 6px 20px rgba(0,0,0,0.6), 0 0 18px rgba(255,60,166,0.08);
   transform:translateY(0);
   animation:jump 1.2s ease-in-out infinite;
-  will-change: transform; transform: translateZ(0);
 }
 .dot:nth-child(2){animation-delay:0.2s}
 .dot:nth-child(3){animation-delay:0.4s}
@@ -159,7 +155,6 @@ body{
   display:flex;align-items:center;justify-content:center;
   position:relative;
   animation:spinfast 6s linear infinite;
-  will-change: transform; transform: translateZ(0);
 }
 .vinyl:before{
   content:'';position:absolute;width:46px;height:46px;border-radius:50%;background:linear-gradient(180deg, var(--accent2), var(--accent));
@@ -191,6 +186,27 @@ body{
   .right{order:-1}
   .vinyl{width:180px;height:180px}
 }
+
+/* Tablets: 600px and below */
+@media (max-width:600px){
+  .title h1{font-size:18px}
+  .title p{font-size:13px}
+  .left h2{font-size:18px}
+  .left p{font-size:14px}
+  .btn{padding:8px 12px; font-size:14px}
+  .vinyl{width:150px;height:150px}
+}
+
+/* Small phones: 400px and below */
+@media (max-width:400px){
+  body{padding:15px}
+  .header{flex-direction:column; align-items:flex-start; gap:8px}
+  .title h1{font-size:16px}
+  .title p{font-size:12px}
+  .btn{width:100%; text-align:center}
+  .vinyl{width:120px;height:120px}
+}
+
 
 </style>
 </head>
